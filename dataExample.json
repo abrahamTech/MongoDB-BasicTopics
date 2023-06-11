@@ -1,0 +1,16 @@
+{
+    "name": "Laptop",
+    "price": 800.2,
+    "active": true,
+    "created_at": new Date("12/12/2001"),
+    "extraData": [1, "aaa", []],
+    "manufacturer": {
+        "nameManuf": "Dell",
+        "version": "XC009",
+        "location": {
+            "city": "USA",
+            "address": "Michigan #45"
+        }
+    }
+    
+}

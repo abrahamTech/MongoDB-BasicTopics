@@ -1,5 +1,7 @@
 # MongoDB-BasicTopics
-This is my personal repo to learn the basic topics of MongoDb and how to intall MongoDB Server
+This is my personal repo to learn the basic topics of MongoDb and how to intall MongoDB Server.
+
+Transform the JSON files to BSON files
 
 Video Link: https://www.youtube.com/watch?v=lWMemPN9t6Q
 
@@ -92,6 +94,9 @@ After insert the first colection to the database it will be created
 
 -- db.collection_name.insert({"name": "laptop"})
 
+* Create Multiple Collections
+-- db.collection_name.insert([{"name": "laptop"},{"name": "mouse", "quantity": 15}, {"name": "monitor"}])
+
 * Remove a Collection
 -- db.collection_name.drop()
 
@@ -99,3 +104,27 @@ After insert the first colection to the database it will be created
 -- db.dropDatabase()
 
 It's going to delete the current Database, so it's importat to verify with the command -- db thata we are in the correct Datanase
+
+* Search all the data of a Collection
+-- db.collection_name.find()
+
+* Search a specific data from collection 
+-- db.collection_name.find({"property":"property_name"})
+
+Also we can do with two or more properties
+-- db.collection_name.find({"property":"property_name", "property2":"property_name2"})
+
+With finOne() it will only return the first data to match
+-- db.collection_name.findOne({"property":"property_name", "property2":"property_name2"})
+
+Show only some properties from the data (1 => show and 0 => Not to show )
+-- db.collection_name.findOne({"property":"property_name", "property2":"property_name2"}, {"property":1, "property2": 1, "_id":0})
+
+* Show the data organized by one property
+-- db.collection_name.find({"property":"property_name"}).sort({property: 1})
+
+* Show only certain number of data
+-- db.collection_name.find().limit(2)
+
+* Show the number of data in a collection
+-- db.collection_name.count()
