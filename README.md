@@ -144,17 +144,17 @@ Example :
 -- db.collection_name.update({"propertyToSearch":"property_name"}, {$set: {"newProperty":"newProperty_name"} })
 
 Examples:
-Adding 1 new property that doesn't exist
+- Adding 1 new property that doesn't exist
     db.collection_name.update({"name": "keyboard"}, {$set: {"price":99.99} })
 
-Modifying the value of 2 properties
+- Modifying the value of 2 properties
     db.collection_name.update({"name": "keyboard"}, {$set: {"name": "monitor", "price":99.99} })
 
-Adding a new object that doesn't exist to the collection
+- Adding a new object that doesn't exist to the collection
     db.collection_name.update({"name": "desktop"} {$set: {"description": "Gaming Desktop"} }, {upsert:true})
 
-Increment the value of a property from project
-    db.collection_name.update({"name": "mouse"}, {$inc: {"price": 1.01}})
+- Increment the value of a property from project
+<>    db.collection_name.update({"name": "mouse"}, {$inc: {"price": 1.01}})
 
 (Replace or add the information of the first object with the info of the second Parameter this property ("propertyToSearch") with all the objects of the second parameter ("newProperty")(Could be one or more properties))
 
@@ -163,3 +163,14 @@ Increment the value of a property from project
 ($set: -> If the property exist, it will be replaced, if not, it will be added)
 
 ($inc: -> Increment numeric values)
+
+($rename: -> Rename a property name)
+
+- Rename the PROPERTIES names
+>> db.collection_name.update({"name": "keyboard"}, {$rename: {"name": "product"} })
+
+* Delete document data
+>> db.collection_name.remove({"name": "mouse"})
+
+- Delete all collection data
+>> db.collection_name.remove({})
